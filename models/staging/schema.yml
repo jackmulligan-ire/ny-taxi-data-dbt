@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    database: TERRAFORM_DEMO_448321_DB
+    schema: TERRAFORM_DEMO_448321_SCHEMA
+    tables:
+      - name: YELLOW_TRIP_DATA_2024_09
