@@ -11,7 +11,7 @@ with green_tripdata as (
 )
 , yellow_tripdata as (
     select *
-    , 'YELLOW' as TYPE_CD
+    , 'YELLOW-GREEN' as TYPE_CD
     from {{ ref('stg_yellow_tripdata') }}
 )
 , dim_zones as (
