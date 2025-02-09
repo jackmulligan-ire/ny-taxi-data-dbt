@@ -17,7 +17,7 @@ models:
         description: ""
         tests:
           - accepted_values:
-              values: ['GREEN', 'YELLOW']
+              values: ['GREEN', 'YELLOW-GREEN']
               severity: warn
 
       - name: ratecodeid
