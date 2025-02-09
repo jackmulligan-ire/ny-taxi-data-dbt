@@ -7,3 +7,201 @@ sources:
     tables:
       - name: YELLOW_TRIP_DATA_2024_09
       - name: GREEN_TRIP_DATA_2024_09
+
+models:
+  - name: stg_green_tripdata
+    description: ""
+    columns:
+      - name: tripid
+        data_type: varchar
+        description: ""
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+
+      - name: vendorid
+        data_type: number
+        description: ""
+
+      - name: ratecodeid
+        data_type: number
+        description: ""
+
+      - name: pickup_locationid
+        data_type: number
+        description: ""
+        tests:
+          - relationships:
+              field: locationid
+              to: ref('taxi_zone_lookup')
+              severity: warn
+
+      - name: dropoff_locationid
+        data_type: number
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: store_and_fwd_flag
+        data_type: varchar
+        description: ""
+
+      - name: passenger_count
+        data_type: number
+        description: ""
+
+      - name: trip_distance
+        data_type: number
+        description: ""
+
+      - name: trip_type
+        data_type: number
+        description: ""
+
+      - name: fare_amount
+        data_type: number
+        description: ""
+
+      - name: extra
+        data_type: number
+        description: ""
+
+      - name: mta_tax
+        data_type: number
+        description: ""
+
+      - name: tip_amount
+        data_type: number
+        description: ""
+
+      - name: tip_ind_cd
+        data_type: number
+        description: ""
+        tests:
+          - accepted_values:
+              values: "{{ var('ind_cd_values') }}"
+              severity: warn
+              quote: false
+
+      - name: tolls_amount
+        data_type: number
+        description: ""
+
+      - name: tolls_ind_cd
+        data_type: number
+        description: ""
+
+      - name: ehail_fee
+        data_type: number
+        description: ""
+
+      - name: improvement_surcharge
+        data_type: number
+        description: ""
+
+      - name: total_amount
+        data_type: number
+        description: ""
+
+      - name: payment_type
+        data_type: number
+        description: ""
+
+  - name: stg_yellow_tripdata
+    description: ""
+    columns:
+      - name: tripid
+        data_type: varchar
+        description: ""
+
+      - name: vendorid
+        data_type: number
+        description: ""
+
+      - name: ratecodeid
+        data_type: number
+        description: ""
+
+      - name: pickup_locationid
+        data_type: number
+        description: ""
+
+      - name: dropoff_locationid
+        data_type: number
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: store_and_fwd_flag
+        data_type: varchar
+        description: ""
+
+      - name: passenger_count
+        data_type: number
+        description: ""
+
+      - name: trip_distance
+        data_type: number
+        description: ""
+
+      - name: trip_type
+        data_type: number
+        description: ""
+
+      - name: fare_amount
+        data_type: number
+        description: ""
+
+      - name: extra
+        data_type: number
+        description: ""
+
+      - name: mta_tax
+        data_type: number
+        description: ""
+
+      - name: tip_amount
+        data_type: number
+        description: ""
+
+      - name: tip_ind_cd
+        data_type: number
+        description: ""
+
+      - name: tolls_amount
+        data_type: number
+        description: ""
+
+      - name: tolls_ind_cd
+        data_type: number
+        description: ""
+
+      - name: ehail_fee
+        data_type: number
+        description: ""
+
+      - name: improvement_surcharge
+        data_type: number
+        description: ""
+
+      - name: total_amount
+        data_type: number
+        description: ""
+
+      - name: payment_type
+        data_type: number
+        description: ""
