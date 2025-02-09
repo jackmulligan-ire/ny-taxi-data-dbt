@@ -1,0 +1,117 @@
+version: 2
+
+models:
+  - name: fac_trips
+    description: ""
+    columns:
+      - name: tripid
+        data_type: varchar
+        description: ""
+
+      - name: vendorid
+        data_type: number
+        description: ""
+
+      - name: type_cd
+        data_type: varchar
+        description: ""
+        tests:
+          - accepted_values:
+              values: ['GREEN', 'YELLOW']
+              severity: warn
+
+      - name: ratecodeid
+        data_type: number
+        description: ""
+
+      - name: pickup_locationid
+        data_type: number
+        description: ""
+
+      - name: pickup_borough
+        data_type: varchar
+        description: ""
+
+      - name: pickup_zone
+        data_type: varchar
+        description: ""
+
+      - name: dropoff_locationid
+        data_type: number
+        description: ""
+
+      - name: dropoff_borough
+        data_type: varchar
+        description: ""
+
+      - name: dropoff_zone
+        data_type: varchar
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: store_and_fwd_flag
+        data_type: varchar
+        description: ""
+
+      - name: passenger_count
+        data_type: number
+        description: ""
+
+      - name: trip_distance
+        data_type: number
+        description: ""
+
+      - name: trip_type
+        data_type: number
+        description: ""
+
+      - name: fare_amount
+        data_type: number
+        description: ""
+
+      - name: extra
+        data_type: number
+        description: ""
+
+      - name: mta_tax
+        data_type: number
+        description: ""
+
+      - name: tip_amount
+        data_type: number
+        description: ""
+
+      - name: tip_ind_cd
+        data_type: number
+        description: ""
+
+      - name: tolls_amount
+        data_type: number
+        description: ""
+
+      - name: tolls_ind_cd
+        data_type: number
+        description: ""
+
+      - name: ehail_fee
+        data_type: number
+        description: ""
+
+      - name: improvement_surcharge
+        data_type: number
+        description: ""
+
+      - name: total_amount
+        data_type: number
+        description: ""
+
+      - name: payment_type
+        data_type: number
+        description: ""
